@@ -32,11 +32,11 @@ abstract class Openhab extends ChopperService {
     }
 
     final newClient = ChopperClient(
-      services: [_$Openhab()],
-      converter: $JsonSerializableConverter(),
-      interceptors: interceptors ?? [],
-      authenticator: authenticator, /*baseUrl: YOUR_BASE_URL*/
-    );
+        services: [_$Openhab()],
+        converter: $JsonSerializableConverter(),
+        interceptors: interceptors ?? [],
+        authenticator: authenticator,
+        baseUrl: baseUrl ?? Uri.parse('http://'));
     return _$Openhab(newClient);
   }
 
